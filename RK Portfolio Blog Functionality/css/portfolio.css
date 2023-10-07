@@ -1,0 +1,262 @@
+/* whole file section START */
+@import url(reset.css);
+
+* {
+    font-family: Roboto Mono;
+}
+
+html {
+    --colour1: #090909;
+    --colour2: #4B5043;
+    --colour3: #9BC4BC;
+    --colour4: #D3FFE9;
+    --colour5: #8DDBE0;
+    --colour6: rgb(37, 40, 48);
+    --colour7: rgb(55, 122, 148);
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #24afaa, #abd5e6, #7d62d6, #8fa866);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    box-sizing: border-box;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+/* whole file section END */
+
+/* header START */
+#title {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-left: 17%;
+    font-family: Pacifico;
+}
+/* header END */
+
+/* navigation side bar START */
+.side_nav {
+    width: 70px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 3px 6px;
+    background: #201E1D;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    transition: width 0.5s;
+    backdrop-filter: blur;
+    opacity: 90%;
+}
+
+.side_nav ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.side_nav li a{
+    margin: 65px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side_nav i {
+    font-size: 30px;
+    color: var(--colour3);
+    width: 30px;
+    margin-right: 0;
+    
+}
+
+.side_nav img {
+    margin-right: 0;
+}
+
+.side_nav li p {
+    white-space: nowrap;
+    font-size: 20px;
+    color: var(--colour3);
+    display: none;
+}
+
+.side_nav:hover {
+    width: 20%;
+}
+
+.side_nav p:hover, 
+.side_nav i:hover {
+    color: var(--colour4);
+}
+
+.side_nav:hover ul li p{
+    display: block;
+}
+
+.side_nav:hover ul li i{
+    margin-right: 30px;
+}
+
+.side_nav:hover img {
+    margin-right: 100px;
+}
+
+.side_nav:hover ul li {
+    justify-content: flex-start;
+}
+
+/* navigation side bar END */
+
+/* portfolio section START */
+.portfolio_section {
+    position: relative;
+    max-width: 1200px;
+    align-items: center;
+    margin-left: 25%;
+    margin-right: 10%;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.container {
+    position: relative;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+@keyframes movedown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+
+.container:nth-child(6){
+    animation-delay: 5s;
+}
+
+.text_box {
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 25px;
+    border: solid 3px #454040;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+
+.text_box small {
+    font-size: smaller;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.text_box a {
+    text-decoration: none;
+    color: black;
+}
+
+.text_box a:hover {
+    text-decoration: none;
+    color: var(--colour3);
+}
+
+figure {
+    display: flex;
+    margin: 1rem;
+}
+
+figcaption {
+    padding-top: 100px;
+    padding-left: 5rem;
+}
+
+@media screen and (max-width: 769px){
+    .side_nav:hover {
+        width: 70px;
+    }
+    
+    .side_nav p:hover, 
+    .side_nav i:hover {
+        color: var(--colour4);
+    }
+    
+    .side_nav:hover ul li p{
+        display: none;
+    }
+    
+    .side_nav:hover ul li i{
+        margin: 0;
+    }
+    
+    .side_nav:hover img {
+        margin-right: 0;
+    }
+    
+    .side_nav:hover ul li {
+        justify-content: flex-start;
+    }
+
+    figcaption {
+        padding-top: 0;
+        padding-left: 2rem;
+        font-size: smaller;
+    }
+
+
+
+}
+/* portfolio section END */
+
+/* footer section START */
+footer {
+    position: relative;
+    text-align: center;
+    margin-left: 21%;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: abel;
+    font-size: large;
+}
+/* footer section END */

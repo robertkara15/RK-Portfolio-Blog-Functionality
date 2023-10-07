@@ -1,0 +1,233 @@
+/* whole file section START */
+@import url(reset.css);
+
+html {
+    --colour1: #090909;
+    --colour2: #4B5043;
+    --colour3: #9BC4BC;
+    --colour4: #D3FFE9;
+    --colour5: #8DDBE0;
+    --colour6: rgb(37, 40, 48);
+    --colour7: rgb(55, 122, 148);
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #24afaa, #abd5e6, #7d62d6, #8fa866);
+    background-size: 300% 400%;
+    animation: color 12s ease-in-out infinite;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+/* whole file section END */
+
+/* header START */
+#title {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-left: 7%;
+    font-family: Pacifico;
+    font-weight: bolder;
+}
+
+/* header END */
+
+/* navigation side bar START */
+.side_nav {
+    width: 70px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 3px 6px;
+    background: #201E1D;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    transition: width 0.5s;
+    backdrop-filter: blur;
+    opacity: 90%;
+}
+
+.side_nav ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.side_nav li a{
+    margin: 65px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side_nav i {
+    font-size: 30px;
+    color: var(--colour3);
+    width: 30px;
+    margin-right: 0; 
+}
+
+.side_nav img {
+    margin-right: 0;
+}
+
+.side_nav li p {
+    white-space: nowrap;
+    font-family: Roboto Mono;
+    font-size: 20px;
+    color: var(--colour3);
+    display: none;
+}
+
+.side_nav:hover {
+    width: 20%;
+}
+
+.side_nav p:hover, 
+.side_nav i:hover {
+    color: var(--colour4);
+}
+
+.side_nav:hover ul li p{
+    display: block;
+}
+
+.side_nav:hover ul li i{
+    margin-right: 30px;
+}
+
+.side_nav:hover img {
+    margin-right: 100px;
+}
+
+.side_nav:hover ul li {
+    justify-content: flex-start;
+}
+
+/* navigation side bar END */
+
+/* contact section START */
+
+.contact_section {
+    padding-top: 4rem;
+    margin-right: 10rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    padding-left: 24%;
+    width: 60%;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_card {
+    background: white;
+    border: solid 3px #454040;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    color: white;
+    padding: 0 20px;
+    margin: 0 10px;
+    width: 210px;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.contact_card a {
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.contact_card i {
+    font-size: 28px;
+    background: var(--colour3);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+}
+
+.contact_card:hover .contact_card i {
+    background: none;
+    color: purple;
+    transform: scale(1.6);
+}
+
+.contact_card p {
+    margin-top: 20px;
+    font-family: Cabin;
+    font-weight: 300;
+    letter-spacing: 2px;
+    max-height: 0;
+    opacity: 0;
+    transition: 0.3s linear;
+    color: black;
+}
+
+.contact_card:hover p {
+    max-height: 40px;
+    opacity: 1;
+}
+
+@media screen and (max-width: 769px){
+    .side_nav:hover {
+        width: 70px;
+    }
+    
+    .side_nav p:hover, 
+    .side_nav i:hover {
+        color: var(--colour4);
+    }
+    
+    .side_nav:hover ul li p{
+        display: none;
+    }
+    
+    .side_nav:hover ul li i{
+        margin: 0;
+    }
+    
+    .side_nav:hover img {
+        margin-right: 0;
+    }
+    
+    .side_nav:hover ul li {
+        justify-content: flex-start;
+    }
+
+}
+/* contact section END */
+
+/* footer section START */
+footer {
+    position: relative;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: abel;
+    font-size: large;
+}
+/* footer section END */

@@ -1,0 +1,326 @@
+/* whole file section START */
+@import url(reset.css);
+
+html {
+    --colour1: #090909;
+    --colour2: #4B5043;
+    --colour3: #9BC4BC;
+    --colour4: #D3FFE9;
+    --colour5: #8DDBE0;
+    --colour6: rgb(37, 40, 48);
+    --colour7: rgb(55, 122, 148);
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, #24afaa, #abd5e6, #7d62d6, #8fa866);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+/* whole file section END */
+
+/* header START */
+
+#title {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 1rem;
+    padding-left: 4%;
+    font-family: Pacifico;
+    font-weight: bolder;
+}
+
+/* header END */
+
+/* navigation side bar START */
+.side_nav {
+    width: 70px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 3px 6px;
+    background: #201E1D;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    transition: width 0.5s;
+    backdrop-filter: blur;
+    opacity: 90%;
+}
+
+.side_nav ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.side_nav li a{
+    margin: 65px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.side_nav i {
+    font-size: 30px;
+    color: var(--colour3);
+    width: 30px;
+    margin-right: 0;
+    
+}
+
+.side_nav img {
+    margin-right: 0;
+}
+
+.side_nav li p {
+    white-space: nowrap;
+    font-family: Roboto Mono;
+    font-size: 20px;
+    color: var(--colour3);
+    display: none;
+}
+
+.side_nav:hover {
+    width: 20%;
+}
+
+.side_nav p:hover, 
+.side_nav i:hover {
+    color: var(--colour4);
+}
+
+.side_nav:hover ul li p{
+    display: block;
+}
+
+.side_nav:hover ul li i{
+    margin-right: 30px;
+}
+
+.side_nav:hover img {
+    margin-right: 100px;
+}
+
+.side_nav:hover ul li {
+    justify-content: flex-start;
+}
+
+/* navigation side bar END */
+
+/* skills section START */
+
+.subtitle {
+    font-size: 30px;
+    font-family: Roboto Mono;
+    text-align: center;
+    padding-top: 1rem;
+    padding-left: 4%;
+}
+
+.skills_section {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 20%;
+    margin-right: 9rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 140px;
+    row-gap: 50px;
+}
+
+.skills_section .skills_card {
+    position: relative;
+    width: 250px;
+    height: 270px;
+    border: solid 3px #454040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    background-color: white;
+    border-radius: 10px;
+}
+
+.skills_section .skills_card .percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.skills_section .skills_card .percent svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+.skills_section .skills_card .percent svg circle {
+    width: 150px;
+    height: 150px;
+    fill: transparent;
+    stroke-width: 4;
+    stroke: #090909;
+    transform: translate(5px, 5px);
+}
+
+.skills_section .skills_card .percent svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+@keyframes fadeIn{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+.dot
+{
+    position: absolute;
+    z-index: 10;
+    inset: 5px;
+    transform: rotate(calc(3.6deg * var(--num)));
+    animation: animateDot 1.5s linear forwards;
+}
+
+@keyframes animateDot
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(calc(3.6deg * var(--num)));
+    }
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--clr),
+    0 0 30px var(--clr);
+}
+
+.number {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+}
+
+.number h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 3em;
+    font-family: Roboto Mono;
+}
+
+.number h2 span {
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    font-size: 0.75em;
+}
+
+.number p {
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-family: Roboto Mono;
+}
+
+@media screen and (max-width: 769px){
+    .side_nav:hover {
+        width: 70px;
+    }
+    
+    .side_nav p:hover, 
+    .side_nav i:hover {
+        color: var(--colour4);
+    }
+    
+    .side_nav:hover ul li p{
+        display: none;
+    }
+    
+    .side_nav:hover ul li i{
+        margin: 0;
+    }
+    
+    .side_nav:hover img {
+        margin-right: 0;
+    }
+    
+    .side_nav:hover ul li {
+        justify-content: flex-start;
+    }
+
+    .subtitle {
+        margin-left: 3rem;
+    }
+
+    .skills_section {
+        margin-left: 14rem;
+    }
+
+    #title {
+        margin-left: 3rem;
+    }
+
+}
+/* skills section END */
+
+/* footer section START */
+footer {
+    position: relative;
+    text-align: center;
+    margin-left: 13%;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: abel;
+    font-size: large;
+}
+/* footer section END */
